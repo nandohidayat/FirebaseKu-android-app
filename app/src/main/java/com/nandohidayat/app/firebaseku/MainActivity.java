@@ -1,5 +1,6 @@
 package com.nandohidayat.app.firebaseku;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.add_barang:
-
+                Intent intent = new Intent(this, AddActivity.class);
+                startActivityForResult(intent, 1);
                 return true;
         }
         return super.onOptionsItemSelected(item);
