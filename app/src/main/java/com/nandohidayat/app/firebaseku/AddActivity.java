@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -62,6 +63,8 @@ public class AddActivity extends AppCompatActivity {
         Barang barang = new Barang(KdBrg, NmBrg, Satuan, HrgBeli, HrgJual, Stok, StokMin);
 
         databaseReference.child(id).setValue(barang);
+
+        Toast.makeText(this, "Successfully Added", Toast.LENGTH_LONG).show();
 
         Intent intent = new Intent();
         setResult(1, intent);
