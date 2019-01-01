@@ -65,11 +65,9 @@ public class AddActivity extends AppCompatActivity {
         int Stok = Integer.parseInt(editStok.getText().toString().trim());
         int StokMin = Integer.parseInt(editStokMin.getText().toString().trim());
 
-        String id = databaseReference.push().getKey();
-
         Barang barang = new Barang(KdBrg, NmBrg, Satuan, HrgBeli, HrgJual, Stok, StokMin);
 
-        databaseReference.child(id).setValue(barang);
+        databaseReference.child(KdBrg).setValue(barang);
 
         Toast.makeText(this, "Successfully Added", Toast.LENGTH_LONG).show();
 
