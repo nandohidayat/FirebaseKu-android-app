@@ -12,8 +12,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class AddActivity extends AppCompatActivity {
-    public static final String KD_BARANG = "com.nandohidayat.app.firebaseku.kdbrg";
-
     EditText editKdBrg;
     EditText editNmBrg;
     EditText editSatuan;
@@ -22,6 +20,7 @@ public class AddActivity extends AppCompatActivity {
     EditText editStok;
     EditText editStokMin;
     Button buttonAdd;
+    Button buttonDel;
 
     DatabaseReference databaseReference;
 
@@ -30,7 +29,7 @@ public class AddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("barangs");
+        Intent intent = getIntent();
 
         editKdBrg = findViewById(R.id.kdbrg);
         editNmBrg = findViewById(R.id.nmbrg);
@@ -40,6 +39,14 @@ public class AddActivity extends AppCompatActivity {
         editStok = findViewById(R.id.stok);
         editStokMin = findViewById(R.id.stokmin);
         buttonAdd = findViewById(R.id.btnadd);
+        buttonDel = findViewById(R.id.btndel);
+
+        if(intent.getStringExtra(MainActivity.KD_BARANG).length() == 0) {
+            databaseReference = FirebaseDatabase.getInstance().getReference("barangs");
+            buttonDel.setVisibility(View.GONE);
+        } else {
+            buttonAdd.setText("Save");
+        }
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override

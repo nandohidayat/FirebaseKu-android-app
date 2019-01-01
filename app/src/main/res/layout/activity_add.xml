@@ -92,11 +92,28 @@
             android:hint="Stok Min"
             android:inputType="number"/>
 
-        <Button
-            android:id="@+id/btnadd"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add"/>
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btndel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:layout_weight="1"
+                android:backgroundTint="#ffff4444"
+                android:textColor="#ffffffff"/>
+
+        </LinearLayout>
 
     </LinearLayout>
 

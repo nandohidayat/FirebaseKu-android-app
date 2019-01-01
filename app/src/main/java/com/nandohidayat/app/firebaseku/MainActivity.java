@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -37,6 +39,18 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.list_barang);
 
         barangs = new ArrayList<>();
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Barang barang = barangs.get(position);
+
+                Intent intent = new Intent(getApplicationContext(), AddActivity.class);
+                intent.putExtra(KD_BARANG, barang.getKdbrg());
+
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -50,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.add_barang:
                 Intent intent = new Intent(this, AddActivity.class);
+                intent.putExtra(KD_BARANG, "");
                 startActivityForResult(intent, 1);
                 return true;
         }
