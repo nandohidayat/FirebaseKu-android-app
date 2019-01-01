@@ -52,4 +52,32 @@ public class Barang {
     public int getStok_min() {
         return Stok_min;
     }
+
+    public void setKdbrg(String kdbrg) {
+        Kdbrg = kdbrg;
+    }
+
+    public void setNmbrg(String nmbrg) {
+        Nmbrg = nmbrg;
+    }
+
+    public void setSatuan(String satuan) {
+        Satuan = satuan;
+    }
+
+    public void setHrgbeli(double hrgbeli) {
+        Hrgbeli = hrgbeli;
+    }
+
+    public void setHrgjual(double hrgjual) {
+        Hrgjual = hrgjual;
+    }
+
+    public void setStok(int stok) {
+        Stok = stok;
+    }
+
+    public void setStok_min(int stok_min) {
+        Stok_min = stok_min;
+    }
 }
