@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,12 +15,13 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String KD_BARANG = "com.nandohidayat.app.firebaseku.kdbrg";
+    public static final String BARANG = "com.nandohidayat.app.firebaseku.brg";
 
     ListView listView;
 
@@ -46,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
                 Barang barang = barangs.get(position);
 
                 Intent intent = new Intent(getApplicationContext(), AddActivity.class);
-                intent.putExtra(KD_BARANG, barang.getKdbrg());
+                Gson gson = new Gson();
+                intent.putExtra(BARANG, gson.toJson(barang));
 
                 startActivity(intent);
             }
@@ -64,8 +65,8 @@ public class MainActivity extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.add_barang:
                 Intent intent = new Intent(this, AddActivity.class);
-                intent.putExtra(KD_BARANG, "");
-                startActivityForResult(intent, 1);
+                intent.putExtra(BARANG, "");
+                startActivity(intent);
                 return true;
         }
         return super.onOptionsItemSelected(item);
