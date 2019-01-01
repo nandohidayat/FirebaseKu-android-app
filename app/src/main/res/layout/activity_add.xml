@@ -53,7 +53,8 @@
             android:id="@+id/hrgbeli"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Harga Beli" />
+            android:hint="Harga Beli"
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -64,7 +65,8 @@
             android:id="@+id/hrgjual"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Harga Jual" />
+            android:hint="Harga Jual"
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -75,7 +77,8 @@
             android:id="@+id/stok"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok" />
+            android:hint="Stok"
+            android:inputType="number"/>
 
         <TextView
             android:layout_width="match_parent"
@@ -86,7 +89,8 @@
             android:id="@+id/stokmin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Stok Min" />
+            android:hint="Stok Min"
+            android:inputType="number"/>
 
         <Button
             android:id="@+id/btnadd"
