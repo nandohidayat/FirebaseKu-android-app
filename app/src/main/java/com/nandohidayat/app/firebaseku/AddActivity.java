@@ -32,14 +32,14 @@ public class AddActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("barangs");
 
-        editKdBrg = (EditText) findViewById(R.id.kdbrg);
-        editNmBrg = (EditText) findViewById(R.id.nmbrg);
-        editSatuan = (EditText) findViewById(R.id.satuan);
-        editHrgBeli = (EditText) findViewById(R.id.hrgbeli);
-        editHrgJual = (EditText) findViewById(R.id.hrgjual);
-        editStok = (EditText) findViewById(R.id.stok);
-        editStokMin = (EditText) findViewById(R.id.stokmin);
-        buttonAdd = (Button) findViewById(R.id.btnadd);
+        editKdBrg = findViewById(R.id.kdbrg);
+        editNmBrg = findViewById(R.id.nmbrg);
+        editSatuan = findViewById(R.id.satuan);
+        editHrgBeli = findViewById(R.id.hrgbeli);
+        editHrgJual = findViewById(R.id.hrgjual);
+        editStok = findViewById(R.id.stok);
+        editStokMin = findViewById(R.id.stokmin);
+        buttonAdd = findViewById(R.id.btnadd);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             @Override

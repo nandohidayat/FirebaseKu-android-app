@@ -7,9 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,16 +17,12 @@ public class MainActivity extends AppCompatActivity {
 
     List<Barang> barangs;
 
-    DatabaseReference databaseReference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("barangs");
-
-        listView = (ListView) findViewById(R.id.list_barang);
+        listView = findViewById(R.id.list_barang);
 
         barangs = new ArrayList<>();
     }
